@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# Demo of skeleton loading UI with shimmer animation
+## Getting started
+There are two directories to run this project - server and client
+1. To run the app. Go to the root folder and run <br />
+    ```npm run start```
+   
+2. Go to http://localhost:3000 to run the app
+   
+There are 2 examples in App.js file. Uncomment the below code one by one and run the app. <br>
+1. - ```<FetchNewsCard />```  <br>
+2. - ```<FetchNewsCards />```  <br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## How to use the skeleton component
+1. You need to wrap your UI around "withSkeleton" function under "./lib/SkeletonLoader.jsx". <br><br>
+   ```withSkeleton(<NewsCard item={news[i]} />, isLoading, skeletonProps)```<br><br>
+       - Param 1 - the component you want to show. <br>
+       - Param 2 - a boolean "isLoading" to indicate when the API results comes. Set it to true initially and false when API response is received. <br>
+       - Param 3 - the props (explained below) you need to provide to design the skeleton UI. <br>
+       
+2. Before talking about skeleton props, let us define what a shape object is in the Skeleton UI. It is just an object with a parameters - shape, width and height. <br>
+   Supported shapes currently are - rectangle and line. <br>
+   Example <br>
+    ```
+    {
+      shape: "rectangle",
+      height: "200px",
+      width: "200px"
+    }
+    ```
 
-## Available Scripts
+4. The skeleton props define what the UI of the skeleton will look like. It has following properties. <br>
+    - type (e.g. "card")
+    - width
+    - height
+    - children - a list of items that represent rows in the skeleton UI.  <br><br>
+  Each row can be a shape object or a list of nested shape objects. More complex UI can be created by further nesting a list of shape objects inside the props.
+Example props <br>
+```
+{
+        type: "card",
+        width: "500px",
+        height: "400px",
+        children: [
+          {
+            shape: "rectangle",
+            height: "220px",
+          },
+          {
+            shape: "line",
+            width: "10%",
+          },
+          {
+            shape: "line",
+          },
+          {
+            shape: "line",
+          },
+          [
+            { shape: "line", width: "30%", height: "10px" },
+            { shape: "line", width: "30%", height: "10px" },
+          ]
+        ]
+}
+```
+   
 
-In the project directory, you can run:
+## Loading one card
+![](https://github.com/pankaj6apr/skeleton/blob/main/Skeleton2.gif)
 
-### `npm start`
+## Loading a list of cards
+![](https://github.com/pankaj6apr/skeleton/blob/main/Skeleton1.gif)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## License
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Copyright (c) 2023 Pankaj Kumar
 
-### `npm test`
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
