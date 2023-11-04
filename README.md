@@ -35,9 +35,8 @@ There are 2 examples in App.js file. Uncomment the below code one by one and run
     - children - a list of items that represent rows in the skeleton UI.  <br><br>
 4. Each "children" row can be a shape object or a nested list of shape objects. More complex UI can be created by further nesting a list of shape objects inside a list. <br>
 For e.g., the props for this card <br>
-
-<img src="https://github.com/pankaj6apr/skeleton/blob/main/skeleton.png" width="200"/>
-would look like this.
+- <img src="https://github.com/pankaj6apr/skeleton/blob/main/skeleton.png" width="200"/>
+would look like this. <br>
 ```
 {
         type: "card",
@@ -59,13 +58,12 @@ would look like this.
             shape: "line",
           },
           [
-            { shape: "line", width: "30%", height: "10px" },
-            { shape: "line", width: "30%", height: "10px" },
+            { shape: "line", width: "30%"},
+            { shape: "line", width: "30%"},
           ]
         ]
 }
-```
-   
+``` 
 
 ## Animation for one card
 ![](https://github.com/pankaj6apr/skeleton/blob/main/Skeleton2.gif)
