@@ -28,13 +28,17 @@ There are 2 examples in App.js file. Uncomment the below code one by one and run
     }
     ```
 
-4. The skeleton props define what the UI of the skeleton will look like. It has following properties. <br>
+3. The skeleton props define what the UI of the skeleton will look like. It has following properties. <br>
     - type (e.g. "card")
     - width
     - height
     - children - a list of items that represent rows in the skeleton UI.  <br><br>
-  Each row can be a shape object or a list of nested shape objects. More complex UI can be created by further nesting a list of shape objects inside the props.
-Example props <br>
+Each row can be a shape object or a list of nested shape objects. More complex UI can be created by further nesting a list of shape objects inside the props.
+For e.g., the props for this card <br>
+
+![](https://github.com/pankaj6apr/skeleton/blob/main/skeleton.png)
+
+would look like this.
 ```
 {
         type: "card",
@@ -64,10 +68,10 @@ Example props <br>
 ```
    
 
-## Loading one card
+## Animation for one card
 ![](https://github.com/pankaj6apr/skeleton/blob/main/Skeleton2.gif)
 
-## Loading a list of cards
+## Animation for a list of cards
 ![](https://github.com/pankaj6apr/skeleton/blob/main/Skeleton1.gif)
 
 ## License
