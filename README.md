@@ -33,11 +33,10 @@ There are 2 examples in App.js file. Uncomment the below code one by one and run
     - width
     - height
     - children - a list of items that represent rows in the skeleton UI.  <br><br>
-Each row can be a shape object or a list of nested shape objects. More complex UI can be created by further nesting a list of shape objects inside the props.
+4. Each "children" row can be a shape object or a nested list of shape objects. More complex UI can be created by further nesting a list of shape objects inside a list. <br>
 For e.g., the props for this card <br>
 
-![](https://github.com/pankaj6apr/skeleton/blob/main/skeleton.png)
-
+<img src="https://github.com/pankaj6apr/skeleton/blob/main/skeleton.png" width="200"/>
 would look like this.
 ```
 {
