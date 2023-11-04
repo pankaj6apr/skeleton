@@ -10,6 +10,21 @@ There are 2 examples in App.js file. Uncomment the below code one by one and run
 1. - ```<FetchNewsCard />```  <br>
 2. - ```<FetchNewsCards />```  <br>
 
+## Project Structure
+There are 2 examples present in /components folder. Each has a a component shown below that is to be used in App.js.<br>
+The /lib folder has the SkeletonLoader component that is to used to wrap your component to create a shimmering skeleton UI for it.
+```
+- src
+    - components
+        - example1
+            - FetchNewsCard.jsx
+        - example2
+            - FetchNewsCards.jsx
+    - lib
+        - SkeletonLoader.jsx
+    - App.js
+```
+
 ## How to use the skeleton component
 1. You need to wrap your UI around "withSkeleton" function under "./lib/SkeletonLoader.jsx". <br><br>
    ```withSkeleton(<NewsCard item={news[i]} />, isLoading, skeletonProps)```<br><br>
