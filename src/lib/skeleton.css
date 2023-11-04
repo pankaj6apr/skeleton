@@ -1,0 +1,58 @@
+.card-border {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 500px;
+  box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5em;
+  background: #ffffff;
+  padding: 0.5rem;
+}
+
+.skeleton-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.skeleton-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.rectangle {
+  background: #dadada;
+  margin: 7px;
+  border-radius: 5px;
+}
+
+.line {
+  background: #dadada;
+  margin: 7px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.shimmerContainer {
+  position: relative;
+}
+
+.shimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg,#ffffff00 9%,  #ffffff44 18%, #ffffff00 31%);
+  animation: shimmerAnimation 2.2s infinite;
+}
+
+@keyframes shimmerAnimation {
+  0% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(300%);
+  }
+}
