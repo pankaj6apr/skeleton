@@ -5,6 +5,42 @@ import withSkeleton from "../../lib/SkeletonLoader";
 const url =
   "https://newsapi.org/v2/everything?q=sports&apiKey=6b9f050df54641b9a26af36719982dbf";
 
+const skeletonProps = {
+  type: "card",
+  width: "500px",
+  height: "400px",
+  children: [
+    {
+      shape: "rectangle",
+      height: "220px",
+    },
+    {
+      shape: "line",
+      width: "10%",
+    },
+    {
+      shape: "line",
+      height: "15px",
+    },
+    {
+      shape: "line",
+      height: "10px",
+    },
+    {
+      shape: "line",
+      height: "10px",
+    },
+    {
+      shape: "line",
+      height: "10px",
+    },
+    [
+      { shape: "line", width: "30%", height: "10px" },
+      { shape: "line", width: "30%", height: "10px" },
+    ],
+  ],
+};
+
 const FetchNewsCard = () => {
   const [news, setNews] = useState([]);
   const [article, setArticle] = useState({});
@@ -30,49 +66,7 @@ const FetchNewsCard = () => {
 
   return (
     <div>
-      {withSkeleton(<NewsCard item={article} />, isLoading, {
-        type: "card",
-        width: "500px",
-        height: "400px",
-        children: [
-          {
-            shape: "rectangle",
-            height: "220px",
-          },
-          {
-            shape: "line",
-            width: "10%",
-          },
-          {
-            shape: "line",
-            height: "15px",
-          },
-          {
-            shape: "line",
-            height: "10px",
-          },
-          {
-            shape: "line",
-            height: "10px",
-          },
-          {
-            shape: "line",
-            height: "10px",
-          },
-          [
-            { shape: "line", width: "30%", height: "10px" },
-            { shape: "line", width: "30%", height: "10px" },
-          ],
-        ],
-      })}
-      {/* {error ? (
-        <div>{error}</div>
-      ) : (
-        news.map((item) => {
-          console.log(item["author"]);
-          return withSkeleton(<NewsCard item={item} />, news.length === 0);
-        })
-      )} */}
+      {withSkeleton(<NewsCard item={article} />, isLoading, skeletonProps)}
     </div>
   );
 };
